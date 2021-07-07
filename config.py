@@ -13,3 +13,5 @@ class Config(BaseModel):
     host: str = os.getenv('HOST')
     port: int = int(os.getenv('PORT'))
     openweathermap_api_key: str = os.getenv('OPENWEATHERMAP_API_KEY')
+    cache_enabled: bool = os.getenv('CACHE_ENABLED')
+    cache_max_age: int = int(os.getenv('CACHE_MAX_AGE'))

@@ -1,0 +1,25 @@
+<div class="flex justify-center w-full mt-20 mb-6">
+    <div class="flex items-end">
+        <h1 class="text-5xl font-semibold">Weather</h1>
+
+        {% if title %}
+            <h1 class="align-text-bottom text-4xl">/</h1>
+            <h1 class="align-text-bottom text-3xl tracking-widest">{{ title|upper }}</h1>
+        {% endif %}
+
+    </div>
+</div>
+
+<div id="search-form" class="input-wrapper flex justify-center mb-6">
+    <input onkeyup="searchSubmit(event)" type="text" class="h-8 w-34 search-input text-center text-lg p-0.5 tracking-widest" id="search-input" placeholder="Search for a city ..." />
+</div>
+
+<script>
+    function searchSubmit(event) {
+        if (event.keyCode === 13) {
+            let dest = "./" + document.getElementById("search-input").value
+            console.log(dest)
+            window.location = dest
+        }
+    }
+</script>
