@@ -1,0 +1,49 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+.search-input {
+    background-color: white;
+    -webkit-mask-image: url("/static/svg/search.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("/static/svg/search.svg");
+    mask-size: auto;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    color: white;
+}
+.search-input:focus {
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-color: transparent;
+    border-bottom-width: 1px;
+}
+.data-table {
+    border-collapse: collapse;
+    border: none;
+}
+
+.data-table td {
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+
+.data-table tr:first-child td {
+    border-top: none;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr td:first-child {
+    border-left: none;
+}
+
+.data-table tr td:last-child {
+    border-right: none;
+}
