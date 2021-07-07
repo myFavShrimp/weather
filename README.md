@@ -11,7 +11,7 @@ This app is using FastApi, tailwindcss, Jinja2 and the openweathermap api.
 ```shell
 $ git clone https://github.com/myFavShrimp/WebChat.git
 
-$ cd WebChat && pip3 install -r requirements.txt
+$ cd weather && pip3 install -r requirements.txt
 ```
 
 Insert your openweathermap api key in the `.env` file and then:
