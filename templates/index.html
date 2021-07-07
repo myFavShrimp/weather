@@ -76,6 +76,7 @@
                     <img class="filter invert h-40 w-40 justify-self-center" src="/static/svg/compass.svg" style="-webkit-transform:rotate({{ wind_data['deg'] + 180 }}deg); -moz-transform: rotate({{ wind_data['deg'] + 180 }}deg); -ms-transform: rotate({{ wind_data['deg'] + 180 }}deg); -o-transform: rotate({{ wind_data['deg'] + 180 }}deg); transform: rotate({{ wind_data['deg'] + 180 }}deg);" />
                 </div>
                 <h1 class="text-2xl font-extralight text-center">wind direction: {{ wind_data['deg'] }}°</h1>
+                <h1 class="text-xl font-extralight text-center">wind speed: {{ wind_data['speed'] }} meter/sec</h1>
             </div>
         {% endif %}
 
