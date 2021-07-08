@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import httpx
@@ -20,12 +21,6 @@ cache_enabled = Config().cache_enabled
 @app.get('/')
 async def index(request: Request):
     return templates.TemplateResponse('content.html', {'request': request})
-
-
-@app.get('/favicon.ico')
-async def index():
-    print('lol')
-    return 'lol'
 
 
 @app.get('/{city}')
