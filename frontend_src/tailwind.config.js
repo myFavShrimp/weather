@@ -7,7 +7,11 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['hover', 'focus'],
+      width: ['focus'],
+      cursor: ['focus'],
+    },
   },
   plugins: [],
 }
