@@ -9,6 +9,8 @@ def get_result_data(result: dict):
         data['main_data'] = result['main']
     if 'wind' in result:
         data['wind_data'] = result['wind']
+    if 'sys' in result:
+        data['sun_data'] = result['sys']
     if 'dt' in result:
         data['updated_on'] = result['dt']
 

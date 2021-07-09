@@ -20,22 +20,23 @@ cache_enabled = Config().cache_enabled
 
 @app.get('/')
 async def index(request: Request):
-    return templates.TemplateResponse('content.html', {'request': request})
+
+    return templates.TemplateResponse('index.html', {'request': request})
 
 
 @app.get('/{city}')
 def city(request: Request, city: str):
     if cache_enabled:
         if item := cache.get_cached_result(city):
-            return templates.TemplateResponse('content.html', {'request': request} | get_result_data(item))
+            return templates.TemplateResponse('search.html', {'request': request} | get_result_data(item))
 
     openweather_data = httpx.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}')
 
     if openweather_data.status_code != 200:
-        return templates.TemplateResponse('content.html',
+        return templates.TemplateResponse('index.html',
                                           {'request': request} | {'title': openweather_data.status_code})
 
     city_data = openweather_data.json()
     cache.add_cached_result(city, city_data)
 
-    return templates.TemplateResponse('content.html', {'request': request} | get_result_data(city_data))
+    return templates.TemplateResponse('search.html', {'request': request} | get_result_data(city_data))

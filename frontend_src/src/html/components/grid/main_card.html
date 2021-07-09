@@ -1,0 +1,33 @@
+{% extends 'components/grid/primitives/grid_item.html' %}
+
+{% block content %}
+<div class="flex justify-center text-4xl font-extralight space-x-4 mb-4">
+    <h1>{{ '%0.1f'|format((main_data['temp'] * 1.8 - 459.67)|float) }}°F</h1>
+    <h1>|</h1>
+    <h1>{{ '%0.1f'|format((main_data['temp'] - 273.15)|float) }}°C</h1>
+</div>
+<div class="flex justify-center items-center my-2">
+    <h1 class="text-9xl font-thin">[</h1>
+    <table class="data-table mt-4">
+        {% for key in ['temp_min', 'temp_max', 'temp'] %}
+        {% endfor %}
+        <tr>
+            <td>min temp</td> <td>{{ '%0.1f'|format((main_data['temp_min'] * 1.8 - 459.67)|float) }}°F</td> <td>{{ '%0.1f'|format((main_data['temp_min'] - 273.15)|float) }}°C</td>
+        </tr>
+        <tr>
+            <td>temp</td> <td>{{ '%0.1f'|format((main_data['temp'] * 1.8 - 459.67)|float) }}°F</td> <td>{{ '%0.1f'|format((main_data['temp'] - 273.15)|float) }}°C</td>
+        </tr>
+        <tr>
+            <td>max temp</td> <td>{{ '%0.1f'|format((main_data['temp_max'] * 1.8 - 459.67)|float) }}°F</td> <td>{{ '%0.1f'|format((main_data['temp_max'] - 273.15)|float) }}°C</td>
+        </tr>
+    </table>
+    <h1 class="text-9xl font-thin">]</h1>
+    {#
+    <ul class="divide-y text-center">
+        <li class="px-2 py-1">
+            {{ main_data['humidity'] }}%
+        </li>
+    </ul>
+    #}
+</div>
+{% endblock %}

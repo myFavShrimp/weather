@@ -1,0 +1,11 @@
+{% extends 'components/grid/primitives/banner.html' %}
+
+{% block content %}
+<h1>last update:</h1>
+<h1 id="updated-on">{{ updated_on }}</h1>
+<script>
+    // client needs to calculate date because of timezones
+    let updated_on = document.getElementById("updated-on")
+    updated_on.innerHTML = new Date(updated_on.innerHTML * 1000).toLocaleString()
+</script>
+{% endblock %}

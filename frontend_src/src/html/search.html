@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if weather_data %}
+{% include 'components/grid/weather_card.html' %}
+{% endif %}
+{% if main_data %}
+{% include 'components/grid/main_card.html' %}
+{% endif %}
+{% if wind_data %}
+{% include 'components/grid/wind_card.html' %}
+{% endif %}
+{% if sun_data %}
+{% include 'components/grid/sun_card.html' %}
+{% endif %}
+{% if updated_on %}
+{% include 'components/grid/updated_banner.html' %}
+{% endif %}
+{% endblock %}

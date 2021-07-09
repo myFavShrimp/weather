@@ -1,0 +1,95 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* normal search */
+.search-input {
+    background-color: transparent;
+    color: white;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    border-bottom-width: 1px;
+    border-color: transparent;
+    width: 6rem;
+    cursor: pointer;
+}
+.search-input::placeholder {
+    color: white !important;
+    opacity: 1;
+}
+/* hovered search */
+.search-input:hover {
+    border-bottom-width: 1px;
+    border-color: white;
+}
+/* focused search */
+.search-input:focus {
+    cursor: text;
+    border-bottom-width: 2px;
+    border-color: white;
+    color: white !important;
+    width: 12rem;
+}
+.search-input:focus::placeholder {
+    color: black !important;
+    opacity: 1;
+}
+/* end search */
+
+/* octagon card */
+.octagon-card {
+	width: 20rem;
+	height: 24rem;
+    background: #212121;
+    position: relative;
+}
+.octagon-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 3rem solid #212121;
+    border-left: 3rem solid black;
+    border-right: 3rem solid black;
+    width: 20rem;
+    height: 0;
+}
+.octagon-card:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 3rem solid #212121;
+    border-left: 3rem solid black;
+    border-right: 3rem solid black;
+    width: 20rem;
+    height: 0;
+}
+/* end octagon card */
+
+.data-table {
+    border-collapse: collapse;
+    border: none;
+}
+
+.data-table td {
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+
+.data-table tr:first-child td {
+    border-top: none;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr td:first-child {
+    border-left: none;
+}
+
+.data-table tr td:last-child {
+    border-right: none;
+}
