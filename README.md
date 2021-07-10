@@ -2,14 +2,14 @@
 
 Get weather information of cities around the globe.
 
-![Preview](https://i.imgur.com/VLCwzZa.gif)
+![Preview](https://i.imgur.com/o8LSWNa.gif)
 
 This app is using FastApi, tailwindcss, Jinja2 and the openweathermap api.
 
 ### Run the application:
 
 ```shell
-$ git clone https://github.com/myFavShrimp/WebChat.git
+$ git clone https://github.com/myFavShrimp/weather.git
 
 $ cd weather && pip3 install -r requirements.txt
 ```
