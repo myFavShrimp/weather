@@ -4,17 +4,28 @@
 <div class="flex flex-col justify-center my-4 font-extralight space-y-4 divide-y divide-white text-center">
     <div class="flex flex-col justify-center space-y-2 px-8">
         <h3 class="text-2xl">Sunrise</h3>
-        <div class="flex space-x-4 justify-center">
+        <div class="flex space-x-4 justify-center items-center">
             <img class="filter invert h-16 w-16 justify-self-center" src="/static/svg/sunrise.svg" />
-            <h1 class="text-5xl">17:13</h1>
+            <h1 id="sunrise" class="text-5xl">{{ sun_data['sunrise'] }}</h1>
         </div>
     </div>
     <div class="flex flex-col justify-center space-y-2 px-8 pt-4">
         <h3 class="text-2xl">Sunset</h3>
-        <div class="flex space-x-4 justify-center">
+        <div class="flex space-x-4 justify-center items-center">
             <img class="filter invert h-16 w-16 justify-self-center" src="/static/svg/sunset.svg" />
-            <h1 class="text-5xl">17:13</h1>
+            <h1 id="sunset" class="text-5xl">{{ sun_data['sunset'] }}</h1>
         </div>
     </div>
 </div>
+<script>
+    // client needs to calculate date because of timezones
+    let sunrise = document.getElementById("sunrise")
+    let sunset = document.getElementById("sunset")
+
+    let sunriseTime = new Date(sunrise.innerHTML * 1000)
+    let sunsetTime = new Date(sunset.innerHTML * 1000)
+
+    sunrise.innerHTML = sunriseTime.getHours() + ':' + sunriseTime.getMinutes()
+    sunset.innerHTML = sunsetTime.getHours() + ':' + sunsetTime.getMinutes()
+</script>
 {% endblock %}
