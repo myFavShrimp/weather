@@ -8,7 +8,7 @@ body {
 
 /* normal search */
 .search-input {
-    @apply bg-transparent text-white transition-all ease-in-out duration-300 border-b-0 border-transparent cursor-pointer hover:border-white hover:border-b focus:border-b-2 focus:border-white focus:w-48 focus:cursor-text;
+    @apply bg-transparent focus:outline-none outline-none text-white transition-all ease-in-out duration-300 border-b-0 border-transparent cursor-pointer hover:border-white hover:border-b focus:border-b-2 focus:border-white focus:w-48 focus:cursor-text;
     width: 6rem;
 }
 .search-input::placeholder {
