@@ -2,7 +2,7 @@
 
 Get weather information of cities around the globe.
 
-![Preview](https://i.imgur.com/o8LSWNa.gif)
+![Preview](https://i.imgur.com/uehIqYT.gif)
 
 This app is using FastApi, tailwindcss, Jinja2 and the openweathermap api.
 
